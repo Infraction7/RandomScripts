@@ -1,0 +1,30 @@
+<roblox xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.roblox.com/roblox.xsd" version="4">
+	<Meta name="ExplicitAutoJoints">true</Meta>
+	<External>null</External>
+	<External>nil</External>
+	<Item class="ModuleScript" referent="RBX0011320677974E0C998688669ECD4CF3">
+		<Properties>
+			<BinaryString name="AttributesSerialize"></BinaryString>
+			<SecurityCapabilities name="Capabilities">0</SecurityCapabilities>
+			<bool name="DefinesCapabilities">false</bool>
+			<Content name="LinkedSource"><null></null></Content>
+			<string name="Name">MSN</string>
+			<string name="ScriptGuid">{76848557-2399-450E-9DA0-491B74D975F9}</string>
+			<ProtectedString name="Source"><![CDATA[local MSN = {}
+
+MSN.ErrorPrefix = "MSN-Host"
+
+function MSN:Convert(Seconds: number?)
+	if type(Seconds) ~= `number` then error(`[{MSN.ErrorPrefix}] Provided value must be a number! Got {type(Seconds)}`, 2) end
+	local min = math.floor(Seconds / 60)
+	local sec = math.floor(Seconds % 60)
+	local mil = math.floor(math.floor((Seconds - math.floor(Seconds)) * 1000) / 10)
+	return string.format(`%02d:%02d:%02d`, min, sec, mil)
+end
+
+return MSN]]></ProtectedString>
+			<int64 name="SourceAssetId">-1</int64>
+			<BinaryString name="Tags"></BinaryString>
+		</Properties>
+	</Item>
+</roblox>
